@@ -1,4 +1,5 @@
 # jfts
+![](https://img.shields.io/npm/l/jfts) ![](https://img.shields.io/npm/v/jfts)
 ## What it is
 As writing rules for the much-used online Turing Machine Simulator can be tedious, this small package parses JFLAP XML and converts it into a plain text file, ready to be pasted onto the website.
 
