@@ -7,7 +7,7 @@ readFile("./" + process.argv[2], { encoding: "utf8" }, (error, content) => {
 })
 
 function structureToScript(input: any) {
-    let states: any[] = input.structure.automaton.state;
+    let states: any[] = input.structure.automaton.state || input.structure.automaton.block;
     let transitions: any[] = input.structure.automaton.transition;
     let rules: any[] = [];
     transitions = transitions.map((transition) => ({ from: (states.find(s => s.id == transition.from).name), to: (states.find(s => s.id == transition.to).name), read: transition.read == "" ? "_" : transition.read, write: transition.write == "" ? "_" : transition.write, move: transition.move == "R" ? ">" : (transition.move == "L" ? "<" : "-") }));
